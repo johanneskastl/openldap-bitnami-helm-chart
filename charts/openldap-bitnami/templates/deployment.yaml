@@ -5,9 +5,7 @@ metadata:
   labels:
     {{- include "openldap-bitnami.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "openldap-bitnami.selectorLabels" . | nindent 6 }}
