@@ -6,6 +6,8 @@ metadata:
     {{- include "openldap-bitnami.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       {{- include "openldap-bitnami.selectorLabels" . | nindent 6 }}
