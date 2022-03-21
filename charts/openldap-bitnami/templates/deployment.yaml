@@ -40,6 +40,10 @@ spec:
           {{- else }}
               value: 'no'
           {{- end }}
+          {{- if .Values.mount_ldif_secret.enabled }}
+            - name: LDAP_CUSTOM_LDIF_DIR
+              value: '/ldif_import/'
+          {{- end }}
           {{- if not .Values.tls_enabled }}
             - name: LDAP_ENABLE_TLS
               value: 'no'
@@ -80,6 +84,10 @@ spec:
           - name: {{ .Release.Name }}-certs
             mountPath: '/etc/ssl/private/'
           {{- end }}
+          {{- if .Values.mount_ldif_secret.enabled }}
+          - name: {{ .Release.Name }}-ldif-import
+            mountPath: '/ldif_import/'
+          {{- end }}
           livenessProbe:
             tcpSocket:
               port: 1389
@@ -101,6 +109,11 @@ spec:
       - name: {{ .Release.Name }}-database
         persistentVolumeClaim:
           claimName: {{ .Release.Name }}-database
+      {{- if .Values.mount_ldif_secret.enabled }}
+      - name: {{ .Release.Name }}-ldif-import
+        secret:
+          secretName: {{ .Values.mount_ldif_secret.secretName }}
+      {{- end }}
       {{- if .Values.tls_certificates_from_secret.enabled -}}
       {{- if .Values.tls_certificates_from_secret.generate_certificate }}
       - name: {{ .Release.Name }}-certs
