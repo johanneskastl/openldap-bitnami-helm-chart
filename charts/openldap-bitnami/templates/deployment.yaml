@@ -33,13 +33,18 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          {{- if not .Values.tls_enabled }}
           env:
+            - name: LDAP_SKIP_DEFAULT_TREE
+          {{- if .Values.skip_default_tree_generation }}
+              value: 'yes'
+          {{- else }}
+              value: 'no'
+          {{- end }}
+          {{- if not .Values.tls_enabled }}
             - name: LDAP_ENABLE_TLS
               value: 'no'
           {{- end }}
           {{- if .Values.tls_certificates_from_secret.enabled }}
-          env:
             - name: LDAP_ENABLE_TLS
               value: 'yes'
             - name: LDAP_TLS_CERT_FILE
