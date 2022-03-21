@@ -14,6 +14,45 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+envFrom: []
+# - configMapRef:
+#     name: config-map-name
+# - secretRef:
+#     name: secret-name
+
+# By default, TLS is enabled.
+# You can disable it by setting this to false:
+tls_enabled: true
+
+# By default, the TLS certificates are being recreated during each startup.
+# For persistence, you should have them stored in Kubernetes in a secret
+# and mounted into the pod.
+#
+# You can either
+# - generate a certificate resource to have cert-manager issue a secret for you or
+# - provide the secret yourself
+#
+# Setting to true enables persistence of the TLS certificates
+tls_certificates_from_secret:
+  enabled: false
+
+  # generate a certificate resource for cert-manager
+  #
+  # generate_certificate: true
+  # certificate:
+  #   commonName: ldap.example.com
+  #   dnsNames:
+  #     - ldap.example.com
+  #     - ldapserver.example.com
+  #   issuerRef:
+  #     name: my-cert-resolver
+  #     kind: ClusterIssuer
+  #   secretName: ldap.example.com-tls
+
+  # specify an existing secret holding the certificates
+  # existingSecret:
+  #   name: secret-name
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
