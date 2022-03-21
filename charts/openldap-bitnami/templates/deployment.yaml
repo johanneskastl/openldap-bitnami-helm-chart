@@ -68,6 +68,9 @@ spec:
             - name: ldaps-udp
               containerPort: 636
               protocol: UDP
+          volumeMounts:
+          - name: {{ .Release.Name }}-database
+            mountPath: '/bitnami/openldap/data'
           livenessProbe:
             tcpSocket:
               port: 389
@@ -85,6 +88,10 @@ spec:
             periodSeconds: 10
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+      - name: {{ .Release.Name }}-database
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}-database
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
