@@ -24,8 +24,7 @@ envFrom: []
 # You can disable it by setting this to false:
 tls_enabled: true
 
-# By default, the TLS certificates are being recreated during each startup.
-# For persistence, you should have them stored in Kubernetes in a secret
+# For persistence, you should have your certificates stored in Kubernetes in a secret
 # and mounted into the pod.
 #
 # You can either
