@@ -20,6 +20,10 @@ envFrom: []
 # - secretRef:
 #     name: secret-name
 
+# Whether to skip generating the default LDAP tree
+#
+skip_default_tree_generation: yes
+
 # By default, TLS is enabled.
 # You can disable it by setting this to false:
 tls_enabled: true
