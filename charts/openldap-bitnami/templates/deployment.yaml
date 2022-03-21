@@ -33,6 +33,22 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if not .Values.tls_enabled }}
+          env:
+            - name: LDAP_ENABLE_TLS
+              value: 'no'
+          {{- end }}
+          {{- if .Values.tls_certificates_from_secret.enabled }}
+          env:
+            - name: LDAP_ENABLE_TLS
+              value: 'yes'
+            - name: LDAP_TLS_CERT_FILE
+              value: '/etc/ssl/private/tls.crt'
+            - name: LDAP_TLS_KEY_FILE
+              value: '/etc/ssl/private/tls.key'
+            - name: LDAP_TLS_CA_FILE
+              value: '/etc/ssl/private/tls.crt'
+          {{- end }}
           {{- if .Values.envFrom }}
           envFrom:
           {{- with .Values.envFrom }}
