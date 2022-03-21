@@ -24,6 +24,12 @@ envFrom: []
 #
 skip_default_tree_generation: yes
 
+# If you want to provide a Kubernetes secret containing ldif files,
+# those can be mounted into the pod
+mount_ldif_secret:
+  enabled: false
+  secretName: "openldap-bitnami-ldif-import"
+
 # By default, TLS is enabled.
 # You can disable it by setting this to false:
 tls_enabled: true
