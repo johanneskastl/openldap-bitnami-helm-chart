@@ -21,8 +21,11 @@ envFrom: []
 #     name: secret-name
 
 # Whether to skip generating the default LDAP tree
+# (needs to be enabled if you want to import files via mount_ldif_secret)
+# see https://github.com/bitnami/bitnami-docker-openldap/issues/86 and
+# https://github.com/bitnami/bitnami-docker-openldap/issues/83
 #
-skip_default_tree_generation: yes
+skip_default_tree_generation: no
 
 # If you want to provide a Kubernetes secret containing ldif files,
 # those can be mounted into the pod
