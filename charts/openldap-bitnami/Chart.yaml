@@ -2,5 +2,5 @@ apiVersion: v2
 name: openldap-bitnami
 description: Helm chart for OpenLDAP based on the Bitnami image
 type: application
-version: 0.1.0
+version: 0.2.0
 appVersion: "2.5.11"
