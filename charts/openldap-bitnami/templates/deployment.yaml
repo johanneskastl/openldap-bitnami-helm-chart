@@ -78,8 +78,8 @@ spec:
               containerPort: 1636
               protocol: UDP
           volumeMounts:
-          - name: {{ .Release.Name }}-database
-            mountPath: '/bitnami/openldap/data'
+          - name: {{ .Release.Name }}-data
+            mountPath: '/bitnami/openldap'
           {{- if .Values.tls_certificates_from_secret.enabled }}
           - name: {{ .Release.Name }}-certs
             mountPath: '/etc/ssl/private/'
@@ -106,9 +106,9 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
-      - name: {{ .Release.Name }}-database
+      - name: {{ .Release.Name }}-data
         persistentVolumeClaim:
-          claimName: {{ .Release.Name }}-database
+          claimName: {{ .Release.Name }}-data
       {{- if .Values.mount_ldif_secret.enabled }}
       - name: {{ .Release.Name }}-ldif-import
         secret:
