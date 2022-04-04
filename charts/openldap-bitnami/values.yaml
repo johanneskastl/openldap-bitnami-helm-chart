@@ -6,7 +6,9 @@ replicaCount: 1
 
 image:
   repository: bitnami/openldap
-  pullPolicy: IfNotPresent
+  # as the tag is updated in-place in the upstream image, set the policy to Always
+  # https://hub.docker.com/r/bitnami/openldap/tags
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
