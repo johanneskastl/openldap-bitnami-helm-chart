@@ -27,7 +27,7 @@ envFrom: []
 # see https://github.com/bitnami/bitnami-docker-openldap/issues/86 and
 # https://github.com/bitnami/bitnami-docker-openldap/issues/83
 #
-skip_default_tree_generation: no
+skip_default_tree_generation: false
 
 # If you want to provide a Kubernetes secret containing ldif files,
 # those can be mounted into the pod
