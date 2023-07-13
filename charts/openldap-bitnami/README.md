@@ -1,6 +1,6 @@
 # openldap-bitnami
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.5.11](https://img.shields.io/badge/AppVersion-2.5.11-informational?style=flat-square)
+![Version: 1.5.0](https://img.shields.io/badge/Version-1.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.6.5](https://img.shields.io/badge/AppVersion-2.6.5-informational?style=flat-square)
 
 Helm chart for OpenLDAP based on the Bitnami image
 
