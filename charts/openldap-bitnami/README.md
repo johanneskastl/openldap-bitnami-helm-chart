@@ -6,15 +6,15 @@ Helm chart for OpenLDAP based on the Bitnami image
 
 ## TL;DR
 ```console
-$ helm repo add johanneskastl-excalidraw https://johanneskastl.github.io/openldap-bitnami-helm-chart/
+$ helm repo add johanneskastl-openldap-bitnami https://johanneskastl.github.io/openldap-bitnami-helm-chart/
 $ helm repo update
-$ helm install openldap-bitnami johanneskastl-excalidraw/openldap-bitnami
+$ helm install openldap-bitnami johanneskastl-openldap-bitnami/openldap-bitnami
 ```
 
 ## Installing the Chart
 To install the chart with the release name `openldap-bitnami`:
 ```console
-helm install openldap-bitnami johanneskastl-excalidraw/openldap-bitnami
+helm install openldap-bitnami johanneskastl-openldap-bitnami/openldap-bitnami
 ```
 
 ## Uninstalling the Chart
@@ -32,12 +32,12 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```console
 helm install openldap-bitnami \
   --namespace openldap-bitnami \
-    johanneskastl-excalidraw/openldap-bitnami
+    johanneskastl-openldap-bitnami/openldap-bitnami
 ```
 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart.
 For example,
 ```console
-helm install openldap-bitnami johanneskastl-excalidraw/openldap-bitnami -f values.yaml
+helm install openldap-bitnami johanneskastl-openldap-bitnami/openldap-bitnami -f values.yaml
 ```
 
