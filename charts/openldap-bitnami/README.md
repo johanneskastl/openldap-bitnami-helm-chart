@@ -6,7 +6,7 @@ Helm chart for OpenLDAP based on the Bitnami image
 
 ## TL;DR
 ```console
-$ helm repo add johanneskastl-excalidraw https://johanneskastl.github.io/excalidraw-helm-chart/
+$ helm repo add johanneskastl-excalidraw https://johanneskastl.github.io/openldap-bitnami-helm-chart/
 $ helm repo update
 $ helm install openldap-bitnami johanneskastl-excalidraw/openldap-bitnami
 ```
