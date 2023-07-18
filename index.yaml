@@ -3,6 +3,19 @@ entries:
   openldap-bitnami:
   - apiVersion: v2
     appVersion: 2.6.5
+    created: "2023-07-18T18:47:55.867713291Z"
+    description: Helm chart for OpenLDAP based on the Bitnami image
+    digest: f1ac0d325157f09c90443f0411edccd3a98e2fd56e0891fcc5c30e6b968869b9
+    maintainers:
+    - email: kastl@b1-systems.de
+      name: johanneskastl
+    name: openldap-bitnami
+    type: application
+    urls:
+    - https://github.com/johanneskastl/openldap-bitnami-helm-chart/releases/download/openldap-bitnami-1.5.1/openldap-bitnami-1.5.1.tgz
+    version: 1.5.1
+  - apiVersion: v2
+    appVersion: 2.6.5
     created: "2023-07-13T04:56:23.849351642Z"
     description: Helm chart for OpenLDAP based on the Bitnami image
     digest: e9753e8c493a73ad34a149df6471fb135b408b4e1e02d10c1450c01c213a2b80
@@ -70,4 +83,4 @@ entries:
     urls:
     - https://github.com/johanneskastl/openldap-bitnami-helm-chart/releases/download/openldap-bitnami-0.1.0/openldap-bitnami-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-13T04:56:23.849371242Z"
+generated: "2023-07-18T18:47:55.867739992Z"
