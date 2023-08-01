@@ -2,8 +2,8 @@ apiVersion: v2
 name: openldap-bitnami
 description: Helm chart for OpenLDAP based on the Bitnami image
 type: application
-version: 1.5.2
-appVersion: 2.6.5
+version: 1.5.3
+appVersion: 2.6.6
 maintainers:
   - name: johanneskastl
     email: kastl@b1-systems.de
