@@ -3,6 +3,17 @@ entries:
   openldap-bitnami:
   - apiVersion: v2
     appVersion: 2.6.6
+    created: "2025-11-07T16:59:25.729030616Z"
+    deprecated: true
+    description: DEPRECATED - Helm chart for OpenLDAP based on the Bitnami image
+    digest: 3c651aa88a5ec205a603fa892fedbaf918a030d2912faa3d9a8a4c92f67fcc41
+    name: openldap-bitnami
+    type: application
+    urls:
+    - https://github.com/johanneskastl/openldap-bitnami-helm-chart/releases/download/openldap-bitnami-2.0.0/openldap-bitnami-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
+    appVersion: 2.6.6
     created: "2023-08-01T10:19:34.24159675Z"
     description: Helm chart for OpenLDAP based on the Bitnami image
     digest: c4e6c6c0f7e390ac0b01ca534d3bb912362f082950bfeeadae5182b18260c6a4
@@ -109,4 +120,4 @@ entries:
     urls:
     - https://github.com/johanneskastl/openldap-bitnami-helm-chart/releases/download/openldap-bitnami-0.1.0/openldap-bitnami-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-01T10:19:34.241899198Z"
+generated: "2025-11-07T16:59:25.72907549Z"
