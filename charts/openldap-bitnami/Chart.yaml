@@ -1,9 +1,10 @@
 apiVersion: v2
 name: openldap-bitnami
-description: Helm chart for OpenLDAP based on the Bitnami image
+description: DEPRECATED - Helm chart for OpenLDAP based on the Bitnami image
 type: application
-version: 1.5.3
+version: 2.0.0
+deprecated: true
 appVersion: 2.6.6
-maintainers:
-  - name: johanneskastl
-    email: kastl@b1-systems.de
+# maintainers:
+#   - name: johanneskastl
+#     email: git@johannes-kastl.de
